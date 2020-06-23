@@ -1,0 +1,20 @@
+{
+    // отладка через локальный Web server for Chrome
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Debug Chrome against localhost",
+            "url": "http://localhost:8887",
+            "webRoot": "${workspaceFolder}"
+        },
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "launch in Chrome",
+            "url": "${workspaceFolder}/dev/index.html",
+            "webRoot": "${workspaceFolder}"
+        }
+    ]
+}

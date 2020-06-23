@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VueJS Test Project</title>
+    <link href="https://cdn.jsdelivr.net/npm/animate.css@3.5.1" rel="stylesheet" type="text/css">
+
+    <style>
+        .fade-enter-active, .fade-leave-active { transition: opacity .5s; }
+.fade-enter, .fade-leave-to /* .fade-leave-active до версии 2.1.8 */ { opacity: 0; }
+/* Анимации появления и исчезновения могут иметь */
+/* различные продолжительности и динамику.       */
+.slide-fade-enter-active {
+  transition: all .3s ease;
+}
+.slide-fade-leave-active {
+  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-to
+/* .slide-fade-leave-active до версии 2.1.8 */ {
+  transform: translateX(10px);
+  opacity: 0;
+}
+    </style>
+</head>
+<body>
+    <div id="app">
+        {{ message }}
+      </div>
+      <div id="app-2">
+        <span v-bind:title="message">
+          Наведи на меня курсор на пару секунд,
+          чтобы увидеть динамически связанное значение title!
+        </span>
+      </div>
+      --Animations--
+      <div id="app-3">
+        <button v-on:click="seen = !seen">
+          Переключить
+        </button>
+        <transition apper name="fade">
+          <p v-if="seen">привет</p>
+        </transition>
+      </div>
+      ----
+      <div id="example-1">
+        <button @click="show = !show">
+          Переключить отрисовку
+        </button>
+        <transition apper name="slide-fade">
+          <p v-if="show">привет</p>
+        </transition>
+      </div>
+      --With Animate.css--
+      <div id="example-3">
+        <button @click="show = !show">
+          Переключить отрисовку
+        </button>
+        <transition
+          apper
+          name="custom-classes-transition"
+          enter-active-class="animated tada"
+          leave-active-class="animated bounceOutRight"
+        >
+          <p v-if="show">привет</p>
+        </transition>
+      </div>
+</body>
+<footer>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/main.js"></script>
+</footer>
+</html>
