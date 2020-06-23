@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VueJS Test Project</title>
-    <link href="https://cdn.jsdelivr.net/npm/animate.css@3.5.1" rel="stylesheet" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet" type="text/css">
 
     <style>
+        body {padding: 0 100px; font-size: 1.5em;}
         .fade-enter-active, .fade-leave-active { transition: opacity .5s; }
 .fade-enter, .fade-leave-to /* .fade-leave-active до версии 2.1.8 */ { opacity: 0; }
 /* Анимации появления и исчезновения могут иметь */
@@ -39,7 +40,7 @@
         <button v-on:click="seen = !seen">
           Переключить
         </button>
-        <transition apper name="fade">
+        <transition name="fade">
           <p v-if="seen">привет</p>
         </transition>
       </div>
@@ -48,7 +49,7 @@
         <button @click="show = !show">
           Переключить отрисовку
         </button>
-        <transition apper name="slide-fade">
+        <transition name="slide-fade">
           <p v-if="show">привет</p>
         </transition>
       </div>
@@ -58,14 +59,14 @@
           Переключить отрисовку
         </button>
         <transition
-          apper
           name="custom-classes-transition"
-          enter-active-class="animated tada"
-          leave-active-class="animated bounceOutRight"
+          enter-active-class="animate__animated animate__rotateIn"
+          leave-active-class="animate__animated animate__lightSpeedOutRight"
         >
           <p v-if="show">привет</p>
         </transition>
       </div>
+      <p class='animate__animated animate__rotateIn' stye='transition:all 3s'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem exercitationem voluptatum nostrum tempore perspiciatis, ea, natus sunt cumque cum nesciunt a unde dolore eum iure inventore? Quae doloribus unde incidunt.</p>
 </body>
 <footer>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
